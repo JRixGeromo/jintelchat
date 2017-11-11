@@ -1,7 +1,11 @@
 var mongo = require('mongodb').MongoClient;
-var client = require('socket.io').listen(3000).sockets;
+const port = process.env.PORT || 3000;
+var client = require('socket.io').listen(port).sockets;
 
-mongo.connect('mongodb://127.0.0.1/mongochat', function(err, db){
+//mongodb://<dbuser>:<dbpassword>@ds157475.mlab.com:57475/jintelware
+//mongo.connect('mongodb://127.0.0.1/mongochat', function(err, db){
+
+mongo.connect('mongodb://jrix:jrix123@ds157475.mlab.com:57475/jintelchat', function(err, db){
 	if(err){
 		throw err
 	}
